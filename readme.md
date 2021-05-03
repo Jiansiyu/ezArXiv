@@ -55,12 +55,12 @@ python manage.py runserver
 
 ### 1. front end
 
- - [x] homepage UI
- - [ ] send post-request
- - [ ] display the search result
+- [x] homepage UI
+- [ ] send post-request
+- [ ] display the search result
 
 ---
-**Optional**'
+**Optional**
 
 - [ ] Voice to Text (record and convert)
 - [ ] type suggestions
@@ -74,10 +74,11 @@ python manage.py runserver
 ---
 
 **Optional**
+
 - [ ] voice to text
 - [ ] type suggestion and correction
 - [ ] push suggested readings
-
+- [ ] 
 
 ## Q&A
 
