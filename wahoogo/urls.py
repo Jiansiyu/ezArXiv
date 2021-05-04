@@ -18,6 +18,7 @@ from django.urls import path
 
 from searcher import views
 urlpatterns = [
-    path(r'', views.home, name='home'),
     path('admin/', admin.site.urls),
+    path('', views.homepage,name='home'),
+    path('results/',views.results,name='Result')
 ]

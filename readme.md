@@ -56,9 +56,8 @@ python manage.py runserver
 ### 1. front end
 
 - [x] homepage UI
-- [ ] send post-request
+- [x] send post-request
 - [ ] display the search result
-
 ---
 **Optional**
 
@@ -78,7 +77,16 @@ python manage.py runserver
 - [ ] voice to text
 - [ ] type suggestion and correction
 - [ ] push suggested readings
-- [ ] 
+
+
+### 3. Develop Schedual
+
+- [ ] Java backend http response 
+- [ ] result display webpage
+- [ ] search server code 
+- [ ] voice to text 
+- [ ] search suggestions
+- [ ] recommendation
 
 ## Q&A
 
