@@ -1,0 +1,29 @@
+{% load static %}
+{# display the search bar #}
+<section class="result_searchbar">
+
+    <div class="searchcontainer row">
+        <div class=" logo result_searchbar_logo">
+            <img src="{% static 'img/logoicon.jpg' %}">
+        </div>
+
+        <div class="result_searchbar_input">
+            <form class="form-inline" action="{% url 'Result' %}" role="form" method="post" id="searchform">
+                  {% csrf_token %}
+                  <div class="row">
+                      <div class="col-md-4 col-md-offset-4">
+                          <input type="text" class="form-control" name="search" value=" {{ queryString }} ">
+                          <span class="glyphicon glyphicon-usd form-control-feedback"></span>
+                      </div>
+
+                  </div>
+              </form>
+        </div>
+
+        <div class="buttons">
+            <button type="submit" class="btn btn-default" form="searchform">arXiv Search</button>
+        </div>
+    </div>
+
+</section>
+<hr>

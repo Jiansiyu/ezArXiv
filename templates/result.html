@@ -1,10 +1,44 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title> Wahoo {{ queryString }} </title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/searchresult.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
 </head>
 <body>
+
+{% include "resultsearchbar.html" %}
+
+{#display content of the search result#}
+<section class="hero is-white">
+    <div class="hero-body" style="padding-top: 1em;">
+        <div class="columns">
+            <div class="column is-6 is-offset-1">
+
+                <ul class="search-results">
+                    {% for item in searchList.organic_results %}
+                         <li>
+                            <a href="{{item.link}}">
+                                <p class="is-size-5 has-text-link">{{ item.title }}</p>
+                                <p>{{ item.abstract }}</p>
+                                <p class="has-text-success">{{ item.link }}</p>
+                            </a>
+                        </li>
+                        <hr>
+                    {% endfor %}
+                </ul>
+                <hr>
+
+            </div>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
