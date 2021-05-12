@@ -88,6 +88,25 @@ python manage.py runserver
 - [ ] search suggestions
 - [ ] recommendation
 
+
+
+###TODO 
+
+- [ ] front end
+- [ ] send the request with the search string 
+- [ ] display the search result according to the return json 
+
+- [x] server side
+- [ ] build server to respond the request 
+- [ ] database 
+- [ ] use json ?
+- [ ] mysql , form query from string
+- [ ] rank, how yo rank the papers
+  
+## next step
+- [ ] voice to text 
+- [ ] adapt it to the front end 
+- [ ] ask, and answer 
 ## Q&A
 
 * if port 8000 is in use
