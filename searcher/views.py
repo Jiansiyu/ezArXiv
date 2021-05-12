@@ -22,46 +22,9 @@ def results(request):
         result = request.POST.get('search')
         logger.info("The Query String is : {}".format(result))
 
-        # get the search string and format http request
-        searchres = {  "organic_results":[
-            {
-            "position":  2,
-            "title": "Best Coffee Shops in Austin, Winter 2019 - Eater Austin",
-            "link":
-            "https://austin.eater.com/maps/best-coffee-austin-cafes",
-            "displayed_link":
-            "https://austin.eater.com › maps › best-coffee-austin-cafes",
-            "date":
-            "Jan 10, 2020",
-            "author":"BullFrog",
-            "abstract":
-            "28 Excellent Coffee Shops in Austin, Winter 2020 · 1. Machine Head Coffee · 2. Epoch Coffee · 3. Houndstooth Coffee · 4. Cherrywood ...",
-            "score":25
-            },
-            {
-            "position":3,
-            "title": "13 Health Benefits of Coffee, Based on Science - Healthline",
-            "link": "https://www.healthline.com/nutrition/top-13-evidence-based-health-benefits-of-coffee",
-            "displayed_link":  "https://healthline.com › nutrition › top-13-evidence-bas...",
-            "date": "Sep 20, 2018",
-            "abstract":  "Coffee is the biggest source of antioxidants in the diet. It has many health benefits, such as improved brain function and a lower risk of serious ..."
-            },
-            {
-            "position":  4,
-            "title":
-            "Peet's Coffee: The Original Craft Coffee",
-            "link":
-            "https://www.peets.com/",
-            "displayed_link":
-            "https://peets.com",
-            "author":"BullFrog",
-            "abstract":
-            "Since 1966, Peet's Coffee has offered superior coffees and teas by sourcing the best quality coffee beans and tea leaves in the world and adhering to strict ...",
-            "score":23
-            }]
-        }
-        jsonstring = json.dumps(searchres)
-
-        return render(request, 'result.html',{'searchList':searchres, 'queryString':'Hello This is an sample Query'})
+        searchRespond = requests.get("http://127.0.0.1:8001/ezserver/api",params={'querystring':queryString})
+        jsonstring = searchRespond.json()
+        logger.debug(jsonstring)
+        return render(request, 'result.html',{'searchList':jsonstring, 'queryString':queryString})
 
     return render(request, 'home.html')
